@@ -1,0 +1,34 @@
+[domain_realm]
+	fnal.gov = "FNAL.GOV"
+	physics.ucdavis.edu = "HEP.PHYSICS.UCDAVIS.EDU"
+
+[libdefaults]
+	default_realm = "CERN.CH"
+	dns_fallback = "yes"
+
+[realms]
+	CERN.CH = {
+		admin_server = "afskrb5m.cern.ch:749"
+		default_domain = "cern.ch"
+		kdc = "afsdb2.cern.ch:88"
+		kdc = "afsdb3.cern.ch:88"
+		kdc = "afsdb1.cern.ch:88"
+		kpasswd_server = "afskrb5m.cern.ch:464"
+	}
+	FNAL.GOV = {
+		admin_server = "krb-fnal-admin.fnal.gov:749"
+		default_domain = "fnal.gov"
+		kdc = "krb-fnal-1.fnal.gov:88"
+		kdc = "krb-fnal-2.fnal.gov:88"
+		kdc = "krb-fnal-3.fnal.gov:88"
+		kdc = "krb-fnal-4.fnal.gov:88"
+		kdc = "krb-fnal-5.fnal.gov:88"
+		kdc = "krb-fnal-6.fnal.gov:88"
+		kdc = "krb-fnal-admin.fnal.gov:88"
+	}
+	HEP.PHYSICS.UCDAVIS.EDU = {
+		admin_server = "cdfw07.physics.ucdavis.edu:749"
+		default_domain = "physics.ucdavis.edu"
+		kdc = "cdfw07.physics.ucdavis.edu:88"
+	}
+
