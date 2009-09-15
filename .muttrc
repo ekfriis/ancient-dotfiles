@@ -1,0 +1,18 @@
+set mbox_type=Maildir                                   # mailbox type
+set hostname=gmail.com                                  # This is my domain.
+ 
+# GMAIL+OFFLINEIMAP settings
+set imap_user=ekfriis@gmail.com
+set folder=/Users/friis/Mail/GMAIL/
+set spoolfile=+/INBOX
+set postponed="+[GMAIL].Drafts"
+set record="+[GMAIL].Sent Mail"
+
+set header_cache=/Users/friis/Mail/hcache/
+ 
+# Mailboxes via offlineimap
+source ~/.mutt/muttrc
+
+set sendmail="/sw/bin/msmtp"
+
+set meta_key=yes

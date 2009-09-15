@@ -1,0 +1,216 @@
+version 5.5
+" vimrc file
+" Created 19991212 by Simon Huggins <huggie@earth.li>
+" Based on ideas by lots of other people but mainly Sven Guckes (see
+" http://www.vim.org/rc)
+"
+
+" General stuff
+" =============
+
+" These two in combination will let me swap without saving yet.
+" Good for multiple files.
+set   autowrite
+set   hidden
+set nobackup
+set nowritebackup
+
+set   path=.,~/Docs,~/the/www,$VIM/syntax/
+" I have all my vim stuff in .vim symlinked to .vimrc and stuff.
+set   viminfo=%,'50,\"100,:100,n~/.vim/.viminfo
+
+" Be nice and quiet
+set noerrorbells
+set   visualbell
+set   t_vb=
+
+" Allow cursor keys to wrap around lines.
+set whichwrap=<,>,[,]
+
+" Show me show me show me!
+set   ruler
+set   title
+set   showmode
+set   showcmd
+set   showmatch    " matching bracket
+set   laststatus=2 " show the status line always
+" but not all the messages
+set   shortmess=atTI
+set   ttyscroll=0
+" Useful for CTRL-] stuff.
+set   iskeyword=@,48-57,_,192-255,-,.
+
+" Syntax highlighting
+" ===================
+
+" add myfiletypefile so syntax highlighting can happen for stuff not in
+" $VIMRUNTIME/syntax/filetype.vim
+" This *MUST* be above switching syntax highlighting on
+
+let myfiletypefile = "~/.vim/myfiletypes.vim"
+
+if &t_Co > 2 || has("gui_running")
+  syntax on
+endif
+
+
+" Formatting
+" ==========
+
+" Format options are set later.  See Programming autocmds
+" Use modelines if they exist.
+set   modeline
+set   modelines=1
+
+" Everyone knows the one true tab width is 8
+set   shiftwidth=8 " for autoindent
+set   tabstop=8    " for tabs
+
+set   textwidth=76
+
+"     comments default: sr:/*,mb:*,el:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+set   comments=b:#,:%,fb:-,n:>,n:),sr:/*,mb:*,el:*/,n:###,n:\"
+set   joinspaces
+
+" Misc
+" ====
+" Sometimes it's nice to
+"set incsearch
+" which means cursor jumps as you type your pattern.
+" digraph defaults off.  Leave it that way.
+
+set   lazyredraw
+set   ttyfast
+
+
+" Mappings
+" ========
+
+" Sven Guckes doesn't like K being a keyword lookup.  I do so, no mapping to
+" turn it off.
+
+" Often more sensible than a real ^Z
+map <C-Z> :shell<C-M>
+
+" vimrc mapping
+let vimrc='~/.vim/vimrc'
+nn  ,u :source <C-R>=vimrc<CR><CR>
+nn  ,v :edit   <C-R>=vimrc<CR><CR>
+
+" Random Goodies!
+" ===============
+
+" Insert date in form 19991215 
+iab Ydate <C-R>=strftime("%Y%m%d")<CR>
+" s/foo// 
+iab emsu supportfoo@blackcatnetworks.co.uk
+iab emsa salesfoo@blackcatnetworks.co.uk
+iab emin infofoo@blackcatnetworks.co.uk
+iab embi billingfoo@blackcatnetworks.co.uk
+iab emsi simonfoo@blackcatnetworks.co.uk
+iab emho hostmasterfoo@blackcatnetworks.co.uk
+iab empf thefreakfoo@paranoidfreak.co.uk
+iab emax shugginsfoo@axialys.net
+
+" Email/News
+" ==========
+"
+" Clear Empty Lines
+map ,cel :%s/^\s\+$//e
+map ,cqoq :%s/^>\s\+/> /e
+" remove all > On blah... stuff left behind in quoted text - huggie
+nmap ,cqmh :g/^\([>*] \)\+On.*wrote:$/d<CR>
+"vim doesn't yet do matching on multilines AFAIK.
+"map ,db :1,20s/\(^On.*wrote:$\)\n\+/\1/
+" Clear blank lines after my On foo wrote: 
+map ,db /^On.*wrote:$/ejmt:.,.s/^$//gecq/^.\+$kmb`td'b
+
+" Kill empty quoted lines
+nmap ,ceql :g/^\(> \)\{2,}\s*$/d<CR>
+nmap ,cqel :%s/^> \s*$//<CR>
+" remove quoted sig
+map ,rq /^> *-- mt/^[^>]*$kmb``d'b
+"    ,Sl = "squeeze lines"
+"    Turn all blocks of empty lines (within current visual)
+"    into *one* empty line:
+map ,dl :g/^$/,/./-j
+
+" Condense multiple Re:'s
+map ,re 1G/^Subject:<CR>:s/\(Re: \)\+/Re: /e<CR>
+
+" Sven's wondeful change subject macro
+map ,cs 1G/^Subject: <CR>yypIX-Old-<ESC>-W
+  
+vmap ,qp    :s/^/> /<CR>
+
+" Alter group reply for Black Cat.
+map ,e 3G:s/^Cc:.* <\=\(.*@[^>]*\)>\=$/Bcc: \1/<CR>jddkyy1GP:s/Bcc: \(.*\)$/From: Simon Huggins <\1>/<CR>jdd
+" Remove email bit in from line.
+map ,w 1G:s/^From:\(.*\) <.*>$/From:\1 <>/<CR>$
+
+" Update wibble
+map ,ne 1G/<tr<CR>V/<\/td<CR>yP/dt<CR>f>lDa<C-R>=strftime("%a, %d %b %Y %H:%M:%S %z")<CR><ESC>jjV/<hr<CR>kdO<p><CR><ESC>kA
+
+" Mail and News autocommands
+" ==========================
+  
+au BufRead ~/.article*,~/tmp/mutt* set tw=72
+" Remove quoted On blah stuff
+" au BufRead ~/.article*,~/tmp/mutt* :normal ,cqmh
+" Remove empty quoted lines
+au BufRead ~/.article*,~/tmp/mutt* :normal ,ceql
+" Remove the empty lines after an unquoted On blah stuff
+au BufRead ~/.article*,~/tmp/mutt* :normal ,db
+" Clear empty lines and turn into space to write in
+au BufRead ~/.article*,~/tmp/mutt* :normal ,cqel
+" Remove blocks of empty lines
+au BufRead ~/.article*,~/tmp/mutt* :normal ,dl
+" Remove many Re:'s from the Subject line
+au BufRead ~/.article*,~/tmp/mutt* :normal ,re
+" Place cursor at end of first quoted paragraph (should be right place after
+" ,cqmh)
+au BufRead ~/.article*,~/tmp/mutt* :normal gg/^On.*wrote:$}
+
+au BufRead golded.msg 1d
+
+
+" HTML stuff
+" ==========
+
+iab ffar <font face="Arial, Helvetica">
+iab nff </font>
+
+" HTML autocommands
+" =================
+"
+" set textwidth to 76 when editing HTML
+" Tabs = 2 for table formatting.
+
+au BufRead *.html,*.shtml,*.htm set tw=76 tabstop=2 shiftwidth=2
+
+" Automatically update the date+time stamp on Web Pages (HTML files)
+au BufWrite *.html,*.shtml,*.htm ks|%g/Last updated: /normal f:lD:read !datekJ`s
+
+" Programming autocommands
+" ========================
+"
+" set cindent
+augroup prog
+        " Remove all avoid twice thing
+        au!
+
+        autocmd FileType *           set formatoptions=tcrql nocindent&
+        autocmd FileType c,cpp,perl  set formatoptions=croql cindent 
+        
+augroup END
+
+" Map Function keys
+" =================
+
+map <F5> :bp<C-M>
+map <F6> :bn<C-M>
+map <F7> :bd<C-M>
+" Source the dead keys stuff.
+" Hit F9 to rotate between them.  HTML one is useful.
+map <F9> :source ~/.vim/dead/text_dead.vim<CR>
+
