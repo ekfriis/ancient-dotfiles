@@ -150,7 +150,7 @@ bind pager	|		pipe-message
 bind pager	<backspace> 	previous-line
 bind pager	<pageup> 	previous-page
 bind pager	<left>		previous-page
-bind pager	\cB		previous-line
+bind pager	\cB		previous-page
 bind pager	-		previous-page
 bind pager	k		previous-undeleted
 bind pager	<up>		previous-undeleted

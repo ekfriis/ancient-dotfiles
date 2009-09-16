@@ -6,10 +6,10 @@
 #
 
 macro index "\em"    "<shell-escape>$HOME/.mutt/msearch.sh " "Run a Mairix search"
-macro index "\ef"    "<change-folder-readonly>=mairix-search\n" "Switch to Mairix search results"
+macro index "\ef"    "<change-folder-readonly>=search\n" "Switch to Mairix search results"
 
 macro pager "\em"    "<shell-escape>$HOME/.mutt/msearch.sh " "Run a Mairix search"
-macro pager "\ef"    "<change-folder-readonly>=mairix-search\n" "Switch to Mairix search results"
+macro pager "\ef"    "<change-folder-readonly>=search\n" "Switch to Mairix search results"
 
 
 # Macros for use in the index.
@@ -41,7 +41,7 @@ macro pager "\e7"    "<enter-command>set pager_index_lines=7<enter>"      # Chan
 macro pager "\e8"    "<enter-command>set pager_index_lines=8<enter>"      # Change PIL size
 macro pager "\e9"    "<enter-command>set pager_index_lines=9<enter>"      # Change PIL size
 macro pager "\e0"    "<enter-command>set pager_index_lines=0<enter>"      # Change PIL size
-macro pager "\Cb"    "<pipe-message>urlview<enter>"                       # URL viewer.
+macro pager "\Cu"    "<pipe-message>urlview<enter>"                       # URL viewer.
 macro pager "\Cx\Cb" "<change-folder>?"                                   # Folder list.
 macro pager "\Cx\Cs" "<pipe-message>cat > ~/"                             # Save message
 macro pager "\eb"    "<pipe-message>lbdb-fetchaddr<enter>"                # Store address details in lbdb.
@@ -51,9 +51,6 @@ macro pager "\ev"    "<pipe-message>less<enter>"                          # View
 macro pager "\el"    "<enter-command>set invpipe_decode<enter>\
 <pipe-message>linkify|w3m -T text/html<enter><enter-command>\
 set invpipe_decode<enter>"                                                # View the message in w3m.
-macro pager "\Cs\Cs" "<pipe-message>spamprobe -T score<enter>"            # What's the score for this message?
-macro pager "\Cs\Cj" "<pipe-message>spamprobe spam<enter>"                # This message is junk.
-macro pager "\Cs\Cg" "<pipe-message>spamprobe good<enter>"                # This message is good.
 
 # Provide some "on-line" help.
 macro generic "\e?" "<shell-escape>less /usr/local/doc/mutt/manual.txt<enter>"
