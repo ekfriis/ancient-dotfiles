@@ -20,7 +20,7 @@ application/vnd.ms-excel; /Users/friis/.mutt/view_attachment.sh %s
 application/msword; /Users/friis/.mutt/view_attachment.sh %s "-" '/Applications/TextEdit.app'
 
 # Images
-image/jpeg; /Users/friis/.mutt/view_attachment.sh %s
+image/jpeg; /Users/friis/.mutt/view_attachment.sh %s "-"
 image/pjpeg; /Users/friis/.mutt/view_attachment.sh %s
 image/png; /Users/friis/.mutt/view_attachment.sh %s
 image/gif; /Users/friis/.mutt/view_attachment.sh %s

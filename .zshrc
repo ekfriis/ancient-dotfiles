@@ -98,20 +98,3 @@ shuffle() {
   ) | sort | sed 's/^[0-9]* //'
 }
 
-export ROOTSYS=/Applications/ROOT
-export PATH=/usr/local/bin:$ROOTSYS/bin:~/scripts:~/scripts/remoteProjectScripts:/Applications/Arduino/hardware/tools/avr/bin/:$PATH
-export PATH=$HOME/avr/bin:$PATH
-export PATH=$HOME/Code/avr/bin:$PATH
-#Fink stuff
-test -r /sw/bin/init.sh && . /sw/bin/init.sh
-# MacPorts Installer addition on 2009-01-19_at_20:55:23: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-
-export lxhome=/afs/cern.ch/user/f/friis
-
-#source ~/.zprompt.txt
-
-
-
-
-#source ~/.profile

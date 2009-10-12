@@ -8,8 +8,12 @@
 #alternates ^vdanen@linsec\\.ca$   ^vdanen@annvix\\.org$   ^vdanen@gmail\\.com$   ^vdanen@mandriva\\.com$
 alternates ^ekfriis@gmail\\.com$   ^friis@physics\\.ucdavis\\.\\.edu$   ^evan\\.klose\\.friis@cern\\.ch$ 
 
+#set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) [%M] %s" 
+set index_format="%4C %Z %{%b %d} %-15.15L (%02N) [%M] %s" 
+
 set realname="Evan K. Friis"		  # our real name
 set from=friis@physics.ucdavis.edu        # our default email address
+my_hdr Cc: friis@physics.ucdavis.edu
 set hostname=gmail.com		          # Name of our local host.
 set hidden_host                           # Hide host details.
 set envelope_from			  # set the envelope-from information
@@ -24,7 +28,7 @@ set print=ask-yes                         # Ask before printing.
 set delete=ask-yes                        # Ask before doing a delete.
 set include                               # Include the message in replies.
 set sort=threads			  # always sort by thread
-set sort_aux=date-received                # Sort threads by date received.
+set sort_aux=last-date-received           # Sort threads by date received.
 set charset=iso-8859-1                    # One of those days in England...
 set noallow_8bit                          # 8bit isn't safe via Demon.
 set ascii_chars=yes			  # use ascii characters when displaying trees
@@ -74,6 +78,7 @@ set to_chars=" +TCF "                     # Drop the "L".
 #source ~/.mutt/aliases			  # Load in my aliases.
 #source ~/.mutt/subscriptions		  # Define the list of subscribed mailing lists.
 source ~/.mutt/mailboxes		  # Define the list of folders that receive mail.
+source ~/.mutt/scoring
 #source ~/.mutt/headers			  # Configure header display.
 #source ~/.mutt/folder-hooks		  # Define folder-hooks.
 #source ~/.mutt/save-hooks		  # Define save-hooks.

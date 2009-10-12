@@ -185,10 +185,6 @@ map <C-H> <C-W>h<C-W>
 "
 "noremap <silent><Space> :<C-u>cal search('\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%$','W')<CR>
 "
-":let g:Tex_ViewRule_dvi = 'open /Applications/Preview.app/'
-":let g:Tex_ViewRule_ps  = 'open /Applications/Preview.app/'
-":let g:Tex_ViewRule_pdf = 'open /Applications/Preview.app/'
-"
 :let g:fuzzy_matching_limit = 50
 :let g:fuzzy_ceiling = 10000
 set cursorline

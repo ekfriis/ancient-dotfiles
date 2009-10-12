@@ -1,8 +1,11 @@
-export ROOTSYS=/Applications/ROOT
-export PATH=/usr/local/bin:$ROOTSYS/bin:~/scripts:~/scripts/remoteProjectScripts:$PATH
+export ROOTSYS=/Applications/root
 export PATH=/usr/local/bin:$ROOTSYS/bin:~/scripts:~/scripts/remoteProjectScripts:/Applications/Arduino/hardware/tools/avr/bin/:$PATH
 export PATH=/Users/friis/Code/astyle/build/mac/bin/:$HOME/Code/avr/bin:$PATH
+export PATH=:$PATH
 export GLOBUS_LOCATION=/usr/local/globus-4.2.0
+
+# TeX installation
+export PATH=/usr/texbin:$PATH
 
 source $GLOBUS_LOCATION/etc/globus-user-env.sh
 
@@ -12,7 +15,7 @@ test -r /sw/bin/init.sh && . /sw/bin/init.sh
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-export LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/lib:$ROOTSYS/lib:$LD_LIBRARY_PATH:/sw/lib/
 export PYTHONPATH=$ROOTSYS/lib/root:$ROOTSYS/lib:$PYTHONPATH
 export DYLD_LIBRARY_PATH=$ROOTSYS/lib:$DYLD_LIBRARY_PATH
 export CVSROOT=':gserver:anonymous@cmscvs.cern.ch:/cvs_server/repositories/CMSSW'
@@ -33,8 +36,6 @@ alias root='root -l'
 alias davis='ssh -CXY cms.physics.ucdavis.edu'
 alias lxplus='ssh -CY lxplus231.cern.ch'
 alias hist='history | grep'
-#alias tdr='export CVSROOT=:gserver:anonymous@isscvs.cern.ch/local/reps/tdr'
-alias tdr='export CVSROOT=:ext:friis@isscvs.cern.ch:/local/reps/tdr; export CVS_RSH="ssh"'
 
 alias fnal='umount -f /Network/LPC; ls /Network/LPC'
 alias sizer='avr-size --format=avr --mcu=atmega168'
