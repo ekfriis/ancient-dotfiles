@@ -189,6 +189,7 @@ map <C-H> <C-W>h<C-W>
 :let g:fuzzy_ceiling = 10000
 set cursorline
 set cursorcolumn
+set novisualbell
 "map <leader>t :FuzzyFinderTextMate<CR>
 "map <leader>b :FuzzyFinderBuffer<CR>
 "map <leader>s <ESC>:s/Signal/Background/g<CR>:noh<CR>

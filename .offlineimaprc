@@ -173,7 +173,7 @@ remoterepository = GmailRemote
 # frequently to do that (in minutes) here.  You can also specify
 # fractional minutes (ie, 3.25).
 
-autorefresh = 1
+autorefresh = 0
 
 # You can tell offlineimap to do a number of quicker synchronizations
 # between full updates.  A quick synchronization only synchronizes
@@ -316,7 +316,7 @@ remotepassfile = ~/.mailpass
 # cases, it may slow things down.  The safe answer is 1.  You should
 # probably never set it to a value more than 5.
 
-maxconnections = 3
+maxconnections = 4
 
 # OfflineIMAP normally closes IMAP server connections between refreshes if
 # the global option autorefresh is specified.  If you wish it to keep the
@@ -353,7 +353,7 @@ holdconnectionopen = no
 # filtered out by folderfilter below.  Failure to follow this rule
 # will result in undefined behavior
 #
-#??nametrans = lambda foldername: re.sub('^\[Gmail\]\.', '', foldername)
+nametrans = lambda foldername: re.sub('^\[Gmail\].', '', foldername)
 
 # Using Courier remotely and want to duplicate its mailbox naming
 # locally?  Try this:
@@ -367,11 +367,13 @@ holdconnectionopen = no
 #
 # Example 1: synchronizing only INBOX and Sent.
 #
-# folderfilter = lambda foldername: foldername in ['INBOX', 'Sent']
+
+#folderfilter = lambda foldername: foldername in ['INBOX', '[Gmail].Sent', '[Gmail].All Mail' ]
+folderfilter = lambda foldername: re.search('All', foldername) or foldername == 'INBOX' or re.search('Sent', foldername)
 #
 # Example 2: synchronizing everything except Trash.
 #
-folderfilter = lambda foldername: foldername not in ['search']
+#folderfilter = lambda foldername: foldername not in ['search']
 #
 # Example 3: Using a regular expression to exclude Trash and all folders
 # containing the characters "Del".

@@ -13,6 +13,6 @@ set header_cache=/Users/friis/Mail/hcache/
 # Mailboxes via offlineimap
 source ~/.mutt/muttrc
 
-set sendmail="/sw/bin/msmtp"
+set sendmail="msmtp"
 
 set meta_key=yes
