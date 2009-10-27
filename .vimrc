@@ -20,6 +20,7 @@ set nocompatible
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
+set t_Co=256
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -98,7 +99,7 @@ set backupdir=~/Code/.vimCrap
 set makeprg=~/scripts/remoteProjectScripts/buildRemote.sh\ %:p
 let $CVSROOT=':gserver:anonymous@cmscvs.cern.ch:/cvs_server/repositories/CMSSW'
 " colorscheme xterm16
-colorscheme pyte
+colorscheme wombat256
 set guioptions-=Trl
 
 "set tags=tags;/,~/Code/root_tags
@@ -122,6 +123,7 @@ set wildmode=list:longest
 set ignorecase
 set smartcase
 set scrolloff=3
+set novisualbell
 
 map <silent> <F13> <ESC>:NERDTreeToggle<CR>
 map <silent> <C-P> <ESC>:NERDTreeToggle<CR>
@@ -131,8 +133,6 @@ map <F14> <Esc>:copen<CR>
 map <F15> <Esc>:cclose<CR>
 map  <silent> <F17>    <Esc>:cn<CR>
 map  <silent> <F18>    <Esc>:cp<CR>
-
-map <S-F13> :!/Users/friis/scripts/buildCTags.sh<CR>
 
 map <C-J> <C-W>j<C-W> 
 map <C-K> <C-W>k<C-W> 
@@ -155,10 +155,6 @@ map <F6> <ESC>:VCSVimDiff<CR>
 noremap <silent><S-Space> :<C-u>cal search('\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%^','bW')<CR>
 
 noremap <silent><Space> :<C-u>cal search('\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%$','W')<CR>
-
-:let g:Tex_ViewRule_dvi = 'open /Applications/Preview.app/'
-:let g:Tex_ViewRule_ps  = 'open /Applications/Preview.app/'
-:let g:Tex_ViewRule_pdf = 'open /Applications/Preview.app/'
 
 set cursorline
 "set cursorcolumn
