@@ -136,6 +136,8 @@ map  <silent> <F18>    <Esc>:cp<CR>
 
 map <C-J> <C-W>j<C-W> 
 map <C-K> <C-W>k<C-W> 
+map <C-j> <C-W>j<C-W> 
+map <C-k> <C-W>k<C-W> 
 
 map <C-L> <C-W>l<C-W> 
 map <C-H> <C-W>h<C-W> 

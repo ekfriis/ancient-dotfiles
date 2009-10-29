@@ -7,8 +7,6 @@ export GLOBUS_LOCATION=/usr/local/globus-4.2.0
 # TeX installation
 export PATH=/usr/texbin:$PATH
 
-source $GLOBUS_LOCATION/etc/globus-user-env.sh
-
 #Fink stuff
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 # MacPorts Installer addition on 2009-01-19_at_20:55:23: adding an appropriate PATH variable for use with MacPorts.
