@@ -41,7 +41,7 @@ set fast_reply				  # skip initial prompts when replying
                                           # Use vim
 #set editor="/Users/vdanen/bin/mate_mutt"
 #set editor="vim +13 -c 'set tw=72 ft=mail noautoindent'"
-set editor="/usr/bin/vim -u ~/.mutt/vimrc"
+set editor="/usr/local/bin/vim -u ~/.mutt/vimrc"
 set query_command="/sw/bin/lbdbq '%s'"	  # Use the little brother database for doing queries.
 set nomark_old                            # Don't mark unread new msgs as old.
 #set mbox=+Inbox                           # Default mailbox.
@@ -75,7 +75,7 @@ set to_chars=" +TCF "                     # Drop the "L".
 
 #source ~/.mutt/gpg.rc			  # Use GPG
 #source ~/.mutt/auto_views		  # Define auto_views.
-#source ~/.mutt/aliases			  # Load in my aliases.
+source ~/.mutt/aliases			  # Load in my aliases.
 #source ~/.mutt/subscriptions		  # Define the list of subscribed mailing lists.
 source ~/.mutt/mailboxes		  # Define the list of folders that receive mail.
 source ~/.mutt/scoring

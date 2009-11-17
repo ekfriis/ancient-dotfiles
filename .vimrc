@@ -20,6 +20,7 @@ set nocompatible
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
+set t_Co=256
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -84,14 +85,6 @@ else
 
 endif " has("autocmd")
 
-" Select colormap: 'soft', 'softlight', 'standard' or 'allblue'
-let xterm16_colormap    = 'standard'
-"
-"                 " Select brightness: 'low', 'med', 'high', 'default'
-"                 or custom levels.
-let xterm16_brightness  = 'default'
-colorscheme xterm16
-
 " Don't mess up local directories
 set dir=~/Code/.vimCrap
 set backupdir=~/Code/.vimCrap
@@ -100,6 +93,8 @@ set makeprg=~/scripts/remoteProjectScripts/buildRemote.sh\ %:p
 
 " Correct CVS server
 let $CVSROOT=':gserver:anonymous@cmscvs.cern.ch:/cvs_server/repositories/CMSSW'
+
+colorscheme wombat256
 
 " ctags location
 set tags=tags
@@ -118,9 +113,12 @@ set wildmode=list:longest
 set ignorecase
 set smartcase
 set scrolloff=3
+set novisualbell
 
 map <C-J> <C-W>j<C-W> 
 map <C-K> <C-W>k<C-W> 
+map <C-j> <C-W>j<C-W> 
+map <C-k> <C-W>k<C-W> 
 
 map <C-L> <C-W>l<C-W> 
 map <C-H> <C-W>h<C-W> 

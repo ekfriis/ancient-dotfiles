@@ -98,3 +98,9 @@ shuffle() {
   ) | sort | sed 's/^[0-9]* //'
 }
 
+export VO_CMS_SW_DIR=/home/friis/cmssw_releases/
+export SCRAM_ARCH=slc4_ia32_gcc345
+
+source $VO_CMS_SW_DIR/cmsset_default.sh
+
+alias cvs=/usr/bin/cvsnt
