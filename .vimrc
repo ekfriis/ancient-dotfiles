@@ -56,6 +56,7 @@ if has("autocmd")
   " Also load indent files, to automatically do language-dependent indenting.
   set nocp
   filetype plugin indent on
+  " filetype plugin on
   set shiftwidth=3
   au BufNewFile,BufRead *.pde set filetype=cpp
   au BufNewFile,BufRead *.mvac set filetype=xml
@@ -89,25 +90,20 @@ let xterm16_colormap    = 'standard'
 "                 " Select brightness: 'low', 'med', 'high', 'default'
 "                 or custom levels.
 let xterm16_brightness  = 'default'
-"
-" Only do this part when compiled with support for autocommands.
+colorscheme xterm16
+
+" Don't mess up local directories
 set dir=~/Code/.vimCrap
 set backupdir=~/Code/.vimCrap
-"set makeprg=ssh\ -q\ $THE_SITE\ \"cd\ CMSSW/$THE_RELEASE/src\;\ scramv1\ b\ -j\ 4\ 2\\\>\\\&1\ \\\|\ sed\ \\\"s\\\|/afs/cern.ch/user/f/friis/CMSSW\\\|/Users/friis/Code/$THE_LOC\\\|\\\"\ \\\|\ sed\ \\\"s\\\|/home/friis/CMSSW\\\|/Users/friis/Code/$THE_LOC\\\|\\\"\"
 
 set makeprg=~/scripts/remoteProjectScripts/buildRemote.sh\ %:p
-let $CVSROOT=':gserver:anonymous@cmscvs.cern.ch:/cvs_server/repositories/CMSSW'
-" colorscheme xterm16
-colorscheme pyte
-set guioptions-=Trl
 
-"set tags=tags;/,~/Code/root_tags
-"set tags=~/Code/root_tags
+" Correct CVS server
+let $CVSROOT=':gserver:anonymous@cmscvs.cern.ch:/cvs_server/repositories/CMSSW'
+
+" ctags location
 set tags=tags
 
-
-"set lines=50
-"set columns=180
 set hidden
 set autowrite
 set expandtab
@@ -123,17 +119,6 @@ set ignorecase
 set smartcase
 set scrolloff=3
 
-map <silent> <F13> <ESC>:NERDTreeToggle<CR>
-map <silent> <C-P> <ESC>:NERDTreeToggle<CR>
-
-nmap <F16> <Esc>:make<CR>
-map <F14> <Esc>:copen<CR>
-map <F15> <Esc>:cclose<CR>
-map  <silent> <F17>    <Esc>:cn<CR>
-map  <silent> <F18>    <Esc>:cp<CR>
-
-map <S-F13> :!/Users/friis/scripts/buildCTags.sh<CR>
-
 map <C-J> <C-W>j<C-W> 
 map <C-K> <C-W>k<C-W> 
 
@@ -144,29 +129,36 @@ map <F6> <ESC>:VCSVimDiff<CR>
 
 
 "Use one of the following to define the camel characters.
-"Stop on capital letters.
-":let g:camelchar = "A-Z"
-""Also stop on numbers.
 :let g:camelchar = "A-Z0-9_."
 "Include '.' for class member, ',' for separator, ';' end-statement,
 "and <[< bracket starts and "'` quotes.
 ":let g:camelchar = "A-Z0-9.,;:{([`'\"
-
 noremap <silent><S-Space> :<C-u>cal search('\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%^','bW')<CR>
-
 noremap <silent><Space> :<C-u>cal search('\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%$','W')<CR>
-
-:let g:Tex_ViewRule_dvi = 'open /Applications/Preview.app/'
-:let g:Tex_ViewRule_ps  = 'open /Applications/Preview.app/'
-:let g:Tex_ViewRule_pdf = 'open /Applications/Preview.app/'
 
 set cursorline
 "set cursorcolumn
+
+"FuzzyFinder settings
 map <leader>t :FuzzyFinderTextMate<CR>
 map <leader>b :FuzzyFinderBuffer<CR>
 map <leader>s <ESC>:s/Signal/Background/g<CR>:noh<CR>
+:let g:fuzzy_matching_limit = 50
+:let g:fuzzy_ceiling = 10000
+
+
+" NERDTree settings
+map <silent> <F13> <ESC>:NERDTreeToggle<CR>
+map <silent> <C-P> <ESC>:NERDTreeToggle<CR>
+let NERDTreeHijackNetrw = 0
+let NERDTreeIgnore=['CVS', 'pyc$', '\.root$', 'pdf$', 'png$', '@Batch', 'xml.bak$', 'xml.fragment$']
+let NERDTreeWinSize=61
+let NERDTreeWinPos=0
+let NERDTreeChDirMode=2 "always set root as cwd
+let NERDTreeChristmasTree = 1
 
 nmap <tab> :bn<cr>
 nmap <s-tab> :bp<cr>
 
-
+"" Reduce autocomplete
+set complete=.,w,b

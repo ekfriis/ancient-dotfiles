@@ -11,7 +11,7 @@ alternates ^ekfriis@gmail\\.com$   ^friis@physics\\.ucdavis\\.\\.edu$   ^evan\\.
 #set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) [%M] %s" 
 set index_format="%4C %Z %{%b %d} %-15.15L (%02N) [%M] %s" 
 
-set realname="Evan K. Friis"		  # our real name
+set realname='Evan K. Friis'		  # our real name
 set from=friis@physics.ucdavis.edu        # our default email address
 my_hdr Cc: friis@physics.ucdavis.edu
 set hostname=gmail.com		          # Name of our local host.
@@ -80,7 +80,7 @@ set to_chars=" +TCF "                     # Drop the "L".
 source ~/.mutt/mailboxes		  # Define the list of folders that receive mail.
 source ~/.mutt/scoring
 #source ~/.mutt/headers			  # Configure header display.
-#source ~/.mutt/folder-hooks		  # Define folder-hooks.
+source ~/.mutt/hooks             	  # Define folder-hooks.
 #source ~/.mutt/save-hooks		  # Define save-hooks.
 #source ~/.mutt/fcc-hooks		  # Define fcc-hooks.
 #source ~/.mutt/message-hooks		  # Define message hooks.

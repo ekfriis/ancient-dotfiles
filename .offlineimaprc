@@ -173,7 +173,7 @@ remoterepository = GmailRemote
 # frequently to do that (in minutes) here.  You can also specify
 # fractional minutes (ie, 3.25).
 
-autorefresh = 1
+autorefresh = 0
 
 # You can tell offlineimap to do a number of quicker synchronizations
 # between full updates.  A quick synchronization only synchronizes
@@ -316,7 +316,7 @@ remotepassfile = ~/.mailpass
 # cases, it may slow things down.  The safe answer is 1.  You should
 # probably never set it to a value more than 5.
 
-maxconnections = 3
+maxconnections = 4
 
 # OfflineIMAP normally closes IMAP server connections between refreshes if
 # the global option autorefresh is specified.  If you wish it to keep the
