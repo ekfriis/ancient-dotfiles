@@ -23,7 +23,8 @@ filetype plugin indent on
 " Enable the python syntax script
 " http://www.vim.org/scripts/script.php?script_id=790
 " ~/.vim/syntax/python.vim
-autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
+autocmd FileType python set complete+=k~/.vim/syntax/python.vim 
+"isk+=.,(
 
 " pydoc plugin
 " http://www.vim.org/scripts/script.php?script_id=910
@@ -47,7 +48,7 @@ let g:pydiction_location = '~/.vim/after/ftplugin/pydiction/complete-dict'
 
 " Pyflakes function for easy use.
 " Pyflakes is in the standard ubuntu repos.
-command Pyflakes :call Pyflakes()
+command! Pyflakes :call Pyflakes()
 function! Pyflakes()
     let tmpfile = tempname()
     execute "w" tmpfile
@@ -58,7 +59,7 @@ endfunction
 
 " Pylint function for easy use.
 " Pylint is in the standard ubuntu repos.
-command Pylint :call Pylint()
+command! Pylint :call Pylint()
 function! Pylint()
     setlocal makeprg=(echo\ '[%]';\ pylint\ %)
     setlocal efm=%+P[%f],%t:\ %#%l:%m

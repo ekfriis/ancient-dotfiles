@@ -125,7 +125,6 @@ map <C-H> <C-W>h<C-W>
 
 map <F6> <ESC>:VCSVimDiff<CR>
 
-
 "Use one of the following to define the camel characters.
 :let g:camelchar = "A-Z0-9_."
 "Include '.' for class member, ',' for separator, ';' end-statement,
