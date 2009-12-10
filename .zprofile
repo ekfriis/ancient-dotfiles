@@ -2,7 +2,8 @@ export ROOTSYS=/Applications/root
 export PATH=/usr/local/bin:$ROOTSYS/bin:~/scripts:~/scripts/remoteProjectScripts:/Applications/Arduino/hardware/tools/avr/bin/:$PATH
 export PATH=/Users/friis/Code/astyle/build/mac/bin/:$HOME/Code/avr/bin:$PATH
 export PATH=:$PATH
-export GLOBUS_LOCATION=/usr/local/globus-4.2.0
+export GLOBUS_LOCATION=/usr/local/globus-4.2.1
+source /usr/local/globus-4.2.1/etc/globus-user-env.sh
 
 # TeX installation
 export PATH=/usr/texbin:$PATH
