@@ -1,0 +1,5 @@
+# Sven's draconian header weeding
+ignore *
+unignore from date subject to cc
+unignore organization organisation x-mailer: x-newsreader: x-mailing-list:
+unignore posted-to

@@ -87,6 +87,7 @@ source ~/.mutt/hooks             	  # Define folder-hooks.
 source ~/.mutt/bindings			  # Define key bindings.
 source ~/.mutt/macros			  # Define macros.
 source ~/.mutt/colours			  # Define colours.
+source ~/.mutt/header_display             # Define header listing
 #source ~/.mutt/sidebar			  # Define sidebar support (requires sidebar patch)
 ##source ~/.mutt/non-standard		  # Support for mutt patches.
 
