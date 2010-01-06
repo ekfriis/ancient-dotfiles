@@ -33,4 +33,5 @@ Host heybuddy
         HostName marvin.physics.ucdavis.edu
         User heybuddy
 
-        
+Host t3
+        HostName cms.tier3.ucdavis.edu
