@@ -22,7 +22,7 @@
 
 #source /usr/share/screen-profiles/profiles/common
 #source common
-source $HOME/dotfiles/.screen-profiles/common
+source $HOME/.screen-profiles/common
 
 # Window tabs, second to last line
 caption always "%{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%? %= %{= kw}%110`%109`%111`"
@@ -49,3 +49,5 @@ attrcolor b ".I"
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 # # erase background with current bg color
 #defbce "on" 
+
+shell zsh
