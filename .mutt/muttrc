@@ -80,7 +80,7 @@ source ~/.mutt/aliases			  # Load in my aliases.
 source ~/.mutt/mailboxes		  # Define the list of folders that receive mail.
 source ~/.mutt/scoring
 #source ~/.mutt/headers			  # Configure header display.
-source ~/.mutt/hooks             	  # Define folder-hooks.
+#source ~/.mutt/hooks             	  # Define folder-hooks.
 #source ~/.mutt/save-hooks		  # Define save-hooks.
 #source ~/.mutt/fcc-hooks		  # Define fcc-hooks.
 #source ~/.mutt/message-hooks		  # Define message hooks.

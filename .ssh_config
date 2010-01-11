@@ -16,6 +16,11 @@ Host lxplus
         #ControlPath = ~/.ssh/lxplus_socket-%r@%h:%p
         ForwardX11 yes
         Compression yes
+        ForwardAgent yes
+        GSSAPIAuthentication yes 
+        GSSAPIDelegateCredentials yes 
+        GSSAPIKeyExchange yes 
+        GSSAPITrustDNS yes 
 
 Host lpc
         HostName cmslpc.fnal.gov
