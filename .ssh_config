@@ -9,6 +9,7 @@ Host davis
         IdentitiesOnly yes
         ForwardX11 yes
         Compression yes
+        DynamicForward 4445
 
 Host lxplus
         HostName lxplus5.cern.ch
