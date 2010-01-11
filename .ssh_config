@@ -3,8 +3,8 @@ ServerAliveInterval 60
 
 Host davis
         HostName cms.physics.ucdavis.edu
-        #ControlMaster = auto
-        #ControlPath = ~/.ssh/davis_socket-%r@%h:%p
+        ControlMaster = auto
+        ControlPath = ~/.ssh/davis_socket-%r@%h:%p
         IdentityFile = ~/.ssh/id_rsa_cms
         IdentitiesOnly yes
         ForwardX11 yes
@@ -13,13 +13,15 @@ Host davis
 
 Host lxplus
         HostName lxplus5.cern.ch
-        #ControlMaster = auto
-        #ControlPath = ~/.ssh/lxplus_socket-%r@%h:%p
+        ControlMaster = auto
+        ControlPath = ~/.ssh/lxplus_socket-%r@%h:%p
         ForwardX11 yes
         Compression yes
 
 Host lpc
         HostName cmslpc.fnal.gov
+        ControlMaster = auto
+        ControlPath = ~/.ssh/lpc_socket-%r@%h:%p
         ForwardX11 yes
         Compression yes
         DynamicForward 4446

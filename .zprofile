@@ -3,7 +3,8 @@ export PATH=/usr/local/bin:$ROOTSYS/bin:~/scripts:~/scripts/remoteProjectScripts
 export PATH=/Users/friis/Code/astyle/build/mac/bin/:$HOME/Code/avr/bin:$PATH
 export PATH=:$PATH
 
-export GLOBUS_LOCATION=/home/globus/globus-4.2.1
+#export GLOBUS_LOCATION=/home/globus/globus-4.2.1
+export GLOBUS_LOCATION=/usr/local/globus-4.2.1/
 source $GLOBUS_LOCATION/etc/globus-user-env.sh
 
 # TeX installation
