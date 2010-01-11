@@ -21,7 +21,8 @@
 ###############################################################################
 
 #source /usr/share/screen-profiles/profiles/common
-source common
+#source common
+source $HOME/dotfiles/.screen-profiles/common
 
 # Window tabs, second to last line
 caption always "%{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%? %= %{= kw}%110`%109`%111`"
@@ -37,4 +38,14 @@ hardstatus string '%99`%{= kw} %100`%112`%= %102`%101`%114`%115`%108`%113`%119`%
 #  * http://savannah.gnu.org/bugs/?22146
 
 # Allow local overrides in $HOME/.screenrc
-source $HOME/.screenrc
+#source $HOME/.screenrc
+
+# BY EK
+escape ^@^@
+# terminfo and termcap for nice 256 color terminal
+# # allow bold colors - necessary for some reason
+attrcolor b ".I"
+# # tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# # erase background with current bg color
+#defbce "on" 
