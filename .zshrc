@@ -79,7 +79,6 @@ alias po='popd'
 alias pu='pushd'
 alias tsl="tail -f /var/log/syslog"
 alias df="df -hT"
-alias em="emacs -nw"
 
 # functions
 mdc() { mkdir -p "$1" && cd "$1" }
@@ -98,7 +97,7 @@ shuffle() {
   ) | sort | sed 's/^[0-9]* //'
 }
 
-source ~/.zshrc_work
-
 export EDITOR=vim
+
+source ~/.zprofile
 

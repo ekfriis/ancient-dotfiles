@@ -1,0 +1,3 @@
+source /uscmst1/prod/sw/cms/shrc uaf
+
+alias crabby='source /uscmst1/prod/grid/CRAB/crab.csh'

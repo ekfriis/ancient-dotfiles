@@ -1,0 +1,2 @@
+export GLOBUS_LOCATION=/home/globus/globus-4.2.1
+source $GLOBUS_LOCATION/etc/globus-user-env.sh
