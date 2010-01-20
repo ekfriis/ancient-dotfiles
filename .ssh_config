@@ -24,6 +24,14 @@ Host lxplus
         GSSAPITrustDNS yes 
 
 Host lpc
+        HostName cmslpc-sl5.fnal.gov
+        ControlMaster = auto
+        ControlPath = ~/.ssh/lpc_socket-%r@%h:%p
+        ForwardX11 yes
+        Compression yes
+        DynamicForward 4446
+
+Host lpc4
         HostName cmslpc.fnal.gov
         ControlMaster = auto
         ControlPath = ~/.ssh/lpc_socket-%r@%h:%p
