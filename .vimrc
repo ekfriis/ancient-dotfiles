@@ -103,7 +103,6 @@ set hidden
 set autowrite
 set expandtab
 set nowrap
-set cindent
 set number
 set visualbell
 

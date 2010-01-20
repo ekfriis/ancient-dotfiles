@@ -25,4 +25,7 @@ alias mathematicaTunnel='ssh -v -L 16286:licelan2.cern.ch:16286 lxplus.cern.ch'
 # MacPorts Installer addition on 2009-01-19_at_20:55:23: adding an appropriate MANPATH variable for use with MacPorts.
 export MANPATH=/opt/local/share/man:$MANPATH
 
+export GLOBUS_LOCATION=/usr/local/globus-4.2.1/
+source $GLOBUS_LOCATION/etc/globus-user-env.sh
+
 alias qlf='qlmanage -p'
