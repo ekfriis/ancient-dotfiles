@@ -6,7 +6,7 @@
 #
 
 macro index "\ef"    "<change-folder-readonly>=search\n" "Switch to Mairix search results"
-macro index "/"      "<change-folder-readonly>=search\n<shell-escape>mairix -t d:6m- " "Run a Mairix search"
+macro index "/"      "<change-folder-readonly>=search\n<shell-escape>mairix -t d:2w- " "Run a Mairix search"
 
 macro index,pager "gi" "<change-folder>=INBOX\n"
 
