@@ -1,6 +1,6 @@
 set -o vi
 
-export CVSROOT=':gserver:anonymous@cmscvs.cern.ch:/cvs_server/repositories/CMSSW'
+export CVSROOT=':gserver:@cmscvs.cern.ch:/cvs_server/repositories/CMSSW'
 
 export VO_CMS_SW_DIR=/home/friis/cmssw_releases/
 export SCRAM_ARCH=slc4_ia32_gcc345
