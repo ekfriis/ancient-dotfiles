@@ -13,6 +13,7 @@ mfolder=/Users/friis/Mail/GMAIL/search
 
 # index everything in $base, recursively
 #mbox=*...
+#maildir=*All*Mail:*Sent*Mail
 maildir=*All*Mail
 
 # don't index our spam folders
