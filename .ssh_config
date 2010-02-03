@@ -49,4 +49,6 @@ Host heybuddy
         User heybuddy
 
 Host t3
-        HostName cms.tier3.ucdavis.edu
+        HostName shell.tier3.ucdavis.edu
+        User ekfriis
+
