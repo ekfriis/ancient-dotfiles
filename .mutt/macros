@@ -5,27 +5,25 @@
 # $Id: macros 9 2007-03-02 21:19:58Z vdanen $
 #
 
-macro index "\em"    "<shell-escape>$HOME/.mutt/msearch.sh " "Run a Mairix search"
 macro index "\ef"    "<change-folder-readonly>=search\n" "Switch to Mairix search results"
+macro index "/"      "<change-folder-readonly>=search\n<shell-escape>mairix -t d:2w- " "Run a Mairix search"
 
-macro pager "\em"    "<shell-escape>$HOME/.mutt/msearch.sh " "Run a Mairix search"
-macro pager "\ef"    "<change-folder-readonly>=search\n" "Switch to Mairix search results"
-
+macro index,pager "gi" "<change-folder>=INBOX\n"
 
 # Macros for use in the index.
 macro index "\Cx\Cb" "<change-folder>?"                                   # Folder list.
 macro index "\Cx\Cs" "<pipe-message>cat > ~/"                             # Save message
 macro index "\'"     "<clear-flag>r"                                      # Mark as un-replied
 macro index "y"      "<sync-mailbox><change-folder>?<toggle-mailboxes>"   # "-y" screen
-macro index "\Cb"    "<pipe-message>urlview<enter>"                       # URL viewer.
+macro index "\Cu"    "<pipe-message>urlview<enter>"                       # URL viewer.
 macro index "\ea"    "<change-folder>=archives/<tab><tab>"                # List archives
 macro index "\eb"    "<pipe-message>lbdb-fetchaddr<enter>"                # Store address details in lbdb.
 macro index "\eh"    "<pipe-message>mailhops<enter>"                      # View the path of the mail.
-macro index "\ef"    "<pipe-message>view-x-face<enter>"                   # View the X-Face (if there is one).
+#macro index "\ef"    "<pipe-message>view-x-face<enter>"                   # View the X-Face (if there is one).
 macro index "\ev"    "<pipe-message>less<enter>"                          # View the message in less.
 macro index "\Cs\Co" "<limit>~h \"X-SpamProbe: GOOD\"<enter><last-entry>" # View good emails.
 macro index "\Cs\Cs" "<limit>~h \"X-SpamProbe: SPAM\"<enter><last-entry>" # View bad emails.
-macro index "q"	     "<change-folder>?<toggle-mailboxes>"		  # when hit quit in index, change folder and toggle to mbox view
+#macro index "q"	     "<change-folder>?<toggle-mailboxes>"		  # when hit quit in index, change folder and toggle to mbox view
 
 
 # Macros for use in the pager.
@@ -46,7 +44,7 @@ macro pager "\Cx\Cb" "<change-folder>?"                                   # Fold
 macro pager "\Cx\Cs" "<pipe-message>cat > ~/"                             # Save message
 macro pager "\eb"    "<pipe-message>lbdb-fetchaddr<enter>"                # Store address details in lbdb.
 macro pager "\eh"    "<pipe-message>mailhops<enter>"                      # View the path of the mail.
-macro pager "\ef"    "<pipe-message>view-x-face<enter>"                   # View the X-Face (if there is one).
+#macro pager "\ef"    "<pipe-message>view-x-face<enter>"                   # View the X-Face (if there is one).
 macro pager "\ev"    "<pipe-message>less<enter>"                          # View the message in less.
 macro pager "\el"    "<enter-command>set invpipe_decode<enter>\
 <pipe-message>linkify|w3m -T text/html<enter><enter-command>\

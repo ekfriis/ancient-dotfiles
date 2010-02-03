@@ -215,6 +215,9 @@ augroup prog
         
 augroup END
 
+imap  
+cmap  
+
 " Map Function keys
 " =================
 

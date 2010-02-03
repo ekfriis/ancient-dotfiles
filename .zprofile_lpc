@@ -1,3 +1,7 @@
 source /uscmst1/prod/sw/cms/shrc uaf
 
-alias crabby='source /uscmst1/prod/grid/CRAB/crab.csh'
+alias cmsenv='eval `scram ru -sh`'
+alias kcvs='/uscmst1/prod/sw/cms/utils/kserver_init'
+alias cvs='env KRB5CCNAME=/tmp/krb_cern_`id -u` cvs'
+
+alias crabby='source /uscmst1/prod/grid/CRAB/crab.sh'

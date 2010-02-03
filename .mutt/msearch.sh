@@ -4,13 +4,16 @@
 #
 # wrapper script to execute mairix searches
 
-mairix=/sw/bin/mairix
+mairix=`which mairix`
 mairixrc=~/.mairixrc
 
 mbox="`grep mfolder ${mairixrc} | cut -d '=' -f 2`"
 echo "Deleting old results folder..."
-rm -f ${mbox}
+rm -rf ${mbox}/*
 # echo "Updating index..."
 # ${mairix} -p
 echo "Executing mairix search..."
-${mairix} $*
+read -e query
+[ -n "$query" ] || exit 0
+#${mairix} $*
+${mairix} $query
