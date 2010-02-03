@@ -19,6 +19,7 @@ export DYLD_LIBRARY_PATH=$ROOTSYS/lib:$DYLD_LIBRARY_PATH
 
 alias sizer='avr-size --format=avr --mcu=atmega168'
 alias arduino='screen /dev/tty.usbserial-A7007cCc 9600'
+alias sage='/Applications/sage/sage'
 
 alias mathematicaTunnel='ssh -v -L 16286:licelan2.cern.ch:16286 lxplus.cern.ch'
 
