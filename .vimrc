@@ -61,6 +61,7 @@ if has("autocmd")
   set shiftwidth=3
   au BufNewFile,BufRead *.pde set filetype=cpp
   au BufNewFile,BufRead *.mvac set filetype=xml
+  au BufNewFile,BufRead *.sage set filetype=python
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
@@ -105,6 +106,7 @@ set expandtab
 set nowrap
 set number
 set visualbell
+set noerrorbells
 
 set wildmenu
 set wildmode=list:longest

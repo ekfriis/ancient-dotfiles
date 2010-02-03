@@ -1,3 +1,5 @@
+source ~/.vimrc
+
 set makeprg=~/scripts/remoteProjectScripts/build.py
 colorscheme wombat
 
@@ -15,4 +17,5 @@ set lines=62
 set columns=230
 set cursorline
 set cursorcolumn
-set novisualbell
+set visualbell
+set noerrorbells
