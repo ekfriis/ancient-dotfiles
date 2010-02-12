@@ -1,0 +1,2 @@
+echo "Setting up T3 CMSSW paths"
+source /share/apps/cmssoft/cmsset_default.sh
