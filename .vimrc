@@ -90,8 +90,6 @@ endif " has("autocmd")
 set dir=~/Code/.vimCrap
 set backupdir=~/Code/.vimCrap
 
-set makeprg=~/scripts/remoteProjectScripts/buildRemote.sh\ %:p
-
 " Correct CVS server
 let $CVSROOT=':gserver:anonymous@cmscvs.cern.ch:/cvs_server/repositories/CMSSW'
 
@@ -155,8 +153,15 @@ let NERDTreeWinPos=0
 let NERDTreeChDirMode=2 "always set root as cwd
 let NERDTreeChristmasTree = 1
 
+" Latex paragraph formatting
+map \gq ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>gq//-1<CR>
+omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
+
 nmap <tab> :bn<cr>
 nmap <s-tab> :bp<cr>
 
 "" Reduce autocomplete
 set complete=.,w,b
+
+"" Make latex suite work
+let g:tex_flavor='latex'
