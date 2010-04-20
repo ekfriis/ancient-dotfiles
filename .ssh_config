@@ -51,4 +51,17 @@ Host heybuddy
 Host t3
         HostName shell.tier3.ucdavis.edu
         User ekfriis
+        IdentityFile %d/.ssh/id_rsa_marvin
+        IdentityFile %d/.ssh/id_rsa
+
+Host kusch
+        HostName kusch.physics.ucdavis.edu
+        User efriis
+        ForwardX11 yes
+        Compression yes
+
+Host webfaction
+        HostName friis.webfactional.com
+        User friis
+        
 
