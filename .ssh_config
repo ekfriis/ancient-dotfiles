@@ -3,6 +3,7 @@ ServerAliveInterval 60
 
 Host davis
         HostName cms.physics.ucdavis.edu
+        User friis
         ControlMaster = auto
         ControlPath = ~/.ssh/davis_socket-%r@%h:%p
         IdentityFile = ~/.ssh/id_rsa_cms
@@ -13,6 +14,7 @@ Host davis
 
 Host lxplus
         HostName lxplus5.cern.ch
+        User friis
         ControlMaster = auto
         ControlPath = ~/.ssh/lxplus_socket-%r@%h:%p
         ForwardX11 yes
@@ -20,11 +22,12 @@ Host lxplus
         ForwardAgent yes
         GSSAPIAuthentication yes 
         GSSAPIDelegateCredentials yes 
-        GSSAPIKeyExchange yes 
-        GSSAPITrustDNS yes 
+        #GSSAPIKeyExchange yes 
+        #GSSAPITrustDNS yes 
 
 Host lpc
         HostName cmslpc-sl5.fnal.gov
+        User friis
         ControlMaster = auto
         ControlPath = ~/.ssh/lpc_socket-%r@%h:%p
         ForwardX11 yes
@@ -33,6 +36,7 @@ Host lpc
 
 Host lpc4
         HostName cmslpc.fnal.gov
+        User friis
         ControlMaster = auto
         ControlPath = ~/.ssh/lpc_socket-%r@%h:%p
         ForwardX11 yes
@@ -41,6 +45,7 @@ Host lpc4
 
 Host marvin
         ForwardX11 yes
+        User friis
         HostName marvin.physics.ucdavis.edu
         DynamicForward 4445
 
