@@ -8,6 +8,7 @@ export LS_COLORS="no=00:fi=00:di=01;94:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd
 export PATH=/usr/texbin:$PATH
 
 #Fink stuff
+echo "Setting up Fink"
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 # MacPorts Installer addition on 2009-01-19_at_20:55:23: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -28,6 +29,7 @@ alias mathematicaTunnel='ssh -v -L 16286:licelan2.cern.ch:16286 lxplus.cern.ch'
 export MANPATH=/opt/local/share/man:$MANPATH
 
 export GLOBUS_LOCATION=/usr/local/globus-4.2.1/
+echo "Setting up GLOBUS"
 source $GLOBUS_LOCATION/etc/globus-user-env.sh
 
 alias qlf='qlmanage -p'

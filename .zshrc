@@ -103,5 +103,4 @@ shuffle() {
 
 export EDITOR=vim
 
-source ~/.zprofile
 

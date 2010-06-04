@@ -62,6 +62,8 @@ if has("autocmd")
   au BufNewFile,BufRead *.pde set filetype=cpp
   au BufNewFile,BufRead *.mvac set filetype=xml
   au BufNewFile,BufRead *.sage set filetype=python
+  au BufNewFile,BufRead *.tex syntax spell toplevel
+  au BufNewFile,BufRead *.tex set spell
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
