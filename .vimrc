@@ -162,6 +162,11 @@ omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
 nmap <tab> :bn<cr>
 nmap <s-tab> :bp<cr>
 
+if $EK_LOCATION == "lxplus"
+   imap  
+   cmap  
+endif
+
 "" Reduce autocomplete
 set complete=.,w,b
 
