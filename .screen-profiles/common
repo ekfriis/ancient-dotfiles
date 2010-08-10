@@ -27,26 +27,26 @@ msgwait 1
 
 # Define status commands
 backtick 99  86400 86400 $HOME/.screen-profiles/screen-profiles-status logo
-backtick 100 3600 3600 $HOME/.screen-profiles/screen-profiles-status release
-backtick 101 10 10 $HOME/.screen-profiles/screen-profiles-status updates-available
-backtick 102 2 2 $HOME/.screen-profiles/screen-profiles-status reboot-required
-backtick 103 2 2 $HOME/.screen-profiles/screen-profiles-status cpu-freq
-backtick 104 86400 86400 $HOME/.screen-profiles/screen-profiles-status cpu-count
+#backtick 100 3600 3600 $HOME/.screen-profiles/screen-profiles-status release
+#backtick 101 10 10 $HOME/.screen-profiles/screen-profiles-status updates-available
+#backtick 102 2 2 $HOME/.screen-profiles/screen-profiles-status reboot-required
+#backtick 103 2 2 $HOME/.screen-profiles/screen-profiles-status cpu-freq
+#backtick 104 86400 86400 $HOME/.screen-profiles/screen-profiles-status cpu-count
 backtick 105 86400 86400 $HOME/.screen-profiles/screen-profiles-status mem-available
 backtick 106 2 2 $HOME/.screen-profiles/screen-profiles-status load-average
 backtick 107 2 2 $HOME/.screen-profiles/screen-profiles-status mem-used
-backtick 108 600 600 $HOME/.screen-profiles/screen-profiles-status ec2-cost
-backtick 109 3600 3600 $HOME/.screen-profiles/screen-profiles-status hostname
-backtick 110 86400 86400 $HOME/.screen-profiles/screen-profiles-status whoami
-backtick 111 86400 86400 $HOME/.screen-profiles/screen-profiles-status menu
-backtick 112 86400 86400 $HOME/.screen-profiles/screen-profiles-status arch
-backtick 113 30 30 $HOME/.screen-profiles/screen-profiles-status battery
-backtick 114 10 10 $HOME/.screen-profiles/screen-profiles-status users
+#backtick 108 600 600 $HOME/.screen-profiles/screen-profiles-status ec2-cost
+#backtick 109 3600 3600 $HOME/.screen-profiles/screen-profiles-status hostname
+#backtick 110 86400 86400 $HOME/.screen-profiles/screen-profiles-status whoami
+#backtick 111 86400 86400 $HOME/.screen-profiles/screen-profiles-status menu
+#backtick 112 86400 86400 $HOME/.screen-profiles/screen-profiles-status arch
+#backtick 113 30 30 $HOME/.screen-profiles/screen-profiles-status battery
+#backtick 114 10 10 $HOME/.screen-profiles/screen-profiles-status users
 backtick 115 60 60 $HOME/.screen-profiles/screen-profiles-status uptime
 backtick 116 2 2 $HOME/.screen-profiles/screen-profiles-status processes
-backtick 117 2 2 $HOME/.screen-profiles/screen-profiles-status network-up
-backtick 118 2 2 $HOME/.screen-profiles/screen-profiles-status network-down
-backtick 119 2 2 $HOME/.screen-profiles/screen-profiles-status wifi-quality
+#backtick 117 2 2 $HOME/.screen-profiles/screen-profiles-status network-up
+#backtick 118 2 2 $HOME/.screen-profiles/screen-profiles-status network-down
+#backtick 119 2 2 $HOME/.screen-profiles/screen-profiles-status wifi-quality
 
 hardstatus alwayslastline
 
