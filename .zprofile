@@ -4,6 +4,8 @@ export CVSROOT=':gserver:@cmscvs.cern.ch:/cvs_server/repositories/CMSSW'
 
 export PATH=$HOME/my_bin/bin:$PATH
 
+export AFS=/afs/cern.ch/user/f/friis
+
 alias stylize='astyle --style=allman --indent=spaces=3 --pad-oper --break-blocks'
 alias showFatties='du -h -a | grep \[0-9\]M | sort -n'
 alias convertEPS='ls *eps | xargs -n 1 epstopdf'
