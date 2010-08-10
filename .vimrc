@@ -89,8 +89,8 @@ else
 endif " has("autocmd")
 
 " Don't mess up local directories
-set dir=~/Code/.vimCrap
-set backupdir=~/Code/.vimCrap
+set dir=~/.vim_crap
+set backupdir=~/.vim_crap
 
 " Correct CVS server
 let $CVSROOT=':gserver:anonymous@cmscvs.cern.ch:/cvs_server/repositories/CMSSW'

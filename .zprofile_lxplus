@@ -1,0 +1,11 @@
+#export VO_CMS_SW_DIR=/afs/cern.ch/cms/sw
+#export SCRAM_ARCH=slc5_ia32_gcc434
+#source /afs/cern.ch/cms/sw/cmsset_default.sh
+source $CMS_PATH/cmsset_default.sh
+export EK_LOCATION=lxplus
+#export PATH=/afs/cern.ch/user/f/friis/scratch0/vim/bin/:$PATH
+alias ls='ls --color=auto'
+# Grid shit
+source /afs/cern.ch/cms/LCG/LCG-2/UI/cms_ui_env.sh 
+alias crabby='source /afs/cern.ch/cms/ccs/wm/scripts/Crab/crab.sh'
+
