@@ -58,7 +58,7 @@ if has("autocmd")
   set nocp
   filetype plugin indent on
   " filetype plugin on
-  set shiftwidth=3
+  set shiftwidth=2
   au BufNewFile,BufRead *.pde set filetype=cpp
   au BufNewFile,BufRead *.mvac set filetype=xml
   au BufNewFile,BufRead *.sage set filetype=python
