@@ -12,11 +12,30 @@ Host davis
         Compression yes
         DynamicForward 4445
 
+Host ucd 
+        GSSAPIAuthentication yes
+        GSSAPIDelegateCredentials yes 
+        HostName ucdavis.cern.ch
+        #IdentityFile = ~/.ssh/id_rsa_marvin
+        #IdentitiesOnly yes
+        ControlMaster = auto
+        ControlPath = ~/.ssh/davis_cern_socket-%r@%h:%p
+
+Host tunnel_ucd
+        ForwardAgent yes
+        Hostname ucdavis.cern.ch
+        HostKeyAlias ucdavis.cern.ch
+        ProxyCommand ~/scripts/netcat-proxy-command lxplus218.cern.ch %h
+        GSSAPIAuthentication yes
+        GSSAPIDelegateCredentials yes 
+        #GSSAPIKeyExchange yes 
+        GSSAPITrustDNS yes 
+
 Host lxplus
         HostName lxplus.cern.ch
         User friis
-        ForwardX11 yes
-        Compression yes
+        #ForwardX11 yes
+        #Compression yes
         ForwardAgent yes
         GSSAPIAuthentication yes 
         GSSAPIDelegateCredentials yes 
