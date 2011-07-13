@@ -1,0 +1,21 @@
+source $CMS_PATH/cmsset_default.sh
+export EK_LOCATION=lxplus
+alias ls='ls --color=auto'
+# Grid shit
+source /afs/cern.ch/cms/LCG/LCG-2/UI/cms_ui_env.sh 
+alias crabby='source /afs/cern.ch/cms/ccs/wm/scripts/Crab/crab.sh'
+
+# Add custom installs
+export PATH=$HOME/scratch0/local/bin:$PATH
+
+# Add a default installation of ROOT
+. /afs/cern.ch/sw/lcg/contrib/gcc/4.3/i686-slc5-gcc34-opt/setup.sh
+cd /afs/cern.ch/sw/lcg/app/releases/ROOT/5.27.04/i686-slc5-gcc43-opt/root/
+. bin/thisroot.sh
+cd -
+
+## Enable PyROOT
+export PYTHON_LOC=/afs/cern.ch/sw/lcg/external/Python/2.5.4p2/i686-slc5-gcc43-opt/
+export PATH=$PYTHON_LOC/bin/:$PATH
+export LD_LIBRARY_PATH=$ROOTSYS/lib:$PYTHON_LOC/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=$PYTHONPATH:$ROOTSYS/lib

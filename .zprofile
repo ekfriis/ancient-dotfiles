@@ -18,6 +18,7 @@ source ~/.zprofile_marvin
 source ~/.zprofile_laptop
 source ~/.zprofile_lpc
 source ~/.zprofile_t3
+source ~/.zprofile_lxplus
 
 # Setup SSH agent
 
