@@ -1,6 +1,12 @@
 IdentityFile ~/.ssh/id_rsa
 ServerAliveInterval 60
 
+Host uw
+        Hostname login.hep.wisc.edu
+        GSSAPIDelegateCredentials yes
+        GSSAPIAuthentication yes
+        User efriis
+
 Host davis
         HostName cms.physics.ucdavis.edu
         User friis
@@ -75,7 +81,7 @@ Host t3
         User ekfriis
         IdentityFile %d/.ssh/id_rsa_marvin
         IdentityFile %d/.ssh/id_rsa
-        DynamicForward 4447
+        #DynamicForward 4447
 
 Host kusch
         HostName kusch.physics.ucdavis.edu
