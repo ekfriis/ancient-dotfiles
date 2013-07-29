@@ -11,6 +11,8 @@ Host davis
         ForwardX11 yes
         Compression yes
         DynamicForward 4445
+        GSSAPIAuthentication yes 
+        GSSAPIDelegateCredentials yes 
 
 Host lxplus
         HostName lxplus.cern.ch
@@ -18,10 +20,10 @@ Host lxplus
         ForwardX11 yes
         Compression yes
         ForwardAgent yes
-        GSSAPIAuthentication yes 
-        GSSAPIDelegateCredentials yes 
-        GSSAPIKeyExchange yes 
-        GSSAPITrustDNS yes 
+        #GSSAPIAuthentication yes 
+        #GSSAPIDelegateCredentials yes 
+        #GSSAPIKeyExchange yes 
+        #GSSAPITrustDNS yes 
 
 Host lpc
         HostName cmslpc-sl5.fnal.gov
