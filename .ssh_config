@@ -1,6 +1,12 @@
 IdentityFile ~/.ssh/id_rsa
 ServerAliveInterval 60
 
+Host uw
+        Hostname login.hep.wisc.edu
+        GSSAPIDelegateCredentials yes
+        GSSAPIAuthentication yes
+        User efriis
+
 Host davis
         HostName cms.physics.ucdavis.edu
         User friis
@@ -14,11 +20,30 @@ Host davis
         GSSAPIAuthentication yes 
         GSSAPIDelegateCredentials yes 
 
+Host ucd 
+        GSSAPIAuthentication yes
+        GSSAPIDelegateCredentials yes 
+        HostName ucdavis.cern.ch
+        #IdentityFile = ~/.ssh/id_rsa_marvin
+        #IdentitiesOnly yes
+        ControlMaster = auto
+        ControlPath = ~/.ssh/davis_cern_socket-%r@%h:%p
+
+Host tunnel_ucd
+        ForwardAgent yes
+        Hostname ucdavis.cern.ch
+        HostKeyAlias ucdavis.cern.ch
+        ProxyCommand ~/scripts/netcat-proxy-command lxplus218.cern.ch %h
+        GSSAPIAuthentication yes
+        GSSAPIDelegateCredentials yes 
+        #GSSAPIKeyExchange yes 
+        GSSAPITrustDNS yes 
+
 Host lxplus
         HostName lxplus.cern.ch
         User friis
-        ForwardX11 yes
-        Compression yes
+        #ForwardX11 yes
+        #Compression yes
         ForwardAgent yes
         #GSSAPIAuthentication yes 
         #GSSAPIDelegateCredentials yes 
@@ -58,7 +83,7 @@ Host t3
         User ekfriis
         IdentityFile %d/.ssh/id_rsa_marvin
         IdentityFile %d/.ssh/id_rsa
-        DynamicForward 4447
+        #DynamicForward 4447
 
 Host kusch
         HostName kusch.physics.ucdavis.edu
