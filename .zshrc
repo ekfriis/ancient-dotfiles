@@ -1,4 +1,5 @@
 # history
+echo "Setting up ZSH features"
 HISTFILE=~/.zsh_history
 HISTSIZE=5000
 SAVEHIST=1000
@@ -102,6 +103,6 @@ shuffle() {
 }
 
 export EDITOR=vim
-source ~/.zprofile
+#source ~/.zprofile
 
 

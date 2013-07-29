@@ -1,8 +1,8 @@
+
+
 set -o vi
 
 export CVSROOT=':gserver:@cmscvs.cern.ch:/cvs_server/repositories/CMSSW'
-
-export PATH=$HOME/my_bin/bin:$PATH
 
 export AFS=/afs/cern.ch/user/f/friis
 
@@ -23,25 +23,26 @@ source ~/.zprofile_lxplus
 
 # Setup SSH agent
 
+echo "Setting up SSH agent"
 SSH_ENV="$HOME/.ssh/environment"
 
-function start_agent {
-     echo "Initialising new SSH agent..."
-     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
-     echo succeeded
-     chmod 600 "${SSH_ENV}"
-     . "${SSH_ENV}" > /dev/null
-     /usr/bin/ssh-add;
-}
+#function start_agent {
+#     echo "Initialising new SSH agent..."
+#     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+#     echo succeeded
+#     chmod 600 "${SSH_ENV}"
+#     . "${SSH_ENV}" > /dev/null
+#     /usr/bin/ssh-add;
+#}
 
 # Source SSH settings, if applicable
-if [ -f "${SSH_ENV}" ]; then
-     . "${SSH_ENV}" > /dev/null
-     #ps ${SSH_AGENT_PID} doesn't work under cywgin
-     #ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-     ps -e | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-         start_agent;
-     }
-else
-     start_agent;
-fi 
+#if [ -f "${SSH_ENV}" ]; then
+#     . "${SSH_ENV}" > /dev/null
+#     #ps ${SSH_AGENT_PID} doesn't work under cywgin
+#     #ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+#     ps -e | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+#         start_agent;
+#     }
+#else
+#     start_agent;
+#fi 

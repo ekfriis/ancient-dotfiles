@@ -1,21 +1,45 @@
-source $CMS_PATH/cmsset_default.sh
+# Grid shit
+echo "Setting up GRID"
+source /afs/cern.ch/cms/LCG/LCG-2/UI/cms_ui_env.sh 
+setopt NO_CDABLE_VARS
+
+export SCRAM_ARCH=slc5_ia32_gcc434
+
+echo "Setting up CMSSW"
+if [[ -e /data1/cms_soft ]]
+then
+   #echo "Using local CMSSW" 
+   #export VO_CMS_SW_DIR=/data1/cms_soft/
+   echo "Using AFS CMSSW"
+   export VO_CMS_SW_DIR=/afs/cern.ch/cms/
+   #alias crabby='source /data1/crab_soft/CRAB_2_7_5_patch1/crab.sh'
+   alias crabby='source /afs/cern.ch/cms/ccs/wm/scripts/Crab/crab.sh'
+else
+   echo "Using AFS CMSSW"
+   #export VO_CMS_SW_DIR=$CMS_PATH
+   #export VO_CMS_SW_DIR=/afs/cern.ch/cms/
+   #ualias crabby='source /afs/cern.ch/cms/ccs/wm/scripts/Crab/crab.sh'
+fi
+
+#source $VO_CMS_SW_DIR/cmsset_default.sh
+
+#export CAF_HOME=/castor/cern.ch/cms/store/caf/user/friis
+
 export EK_LOCATION=lxplus
 alias ls='ls --color=auto'
-# Grid shit
-source /afs/cern.ch/cms/LCG/LCG-2/UI/cms_ui_env.sh 
-alias crabby='source /afs/cern.ch/cms/ccs/wm/scripts/Crab/crab.sh'
 
 # Add custom installs
-export PATH=$HOME/scratch0/local/bin:$PATH
+#export PATH=$HOME/scratch0/local/bin:$PATH
 
 # Add a default installation of ROOT
-. /afs/cern.ch/sw/lcg/contrib/gcc/4.3/i686-slc5-gcc34-opt/setup.sh
-cd /afs/cern.ch/sw/lcg/app/releases/ROOT/5.27.04/i686-slc5-gcc43-opt/root/
-. bin/thisroot.sh
-cd -
-
-## Enable PyROOT
-export PYTHON_LOC=/afs/cern.ch/sw/lcg/external/Python/2.5.4p2/i686-slc5-gcc43-opt/
-export PATH=$PYTHON_LOC/bin/:$PATH
-export LD_LIBRARY_PATH=$ROOTSYS/lib:$PYTHON_LOC/lib:$LD_LIBRARY_PATH
-export PYTHONPATH=$PYTHONPATH:$ROOTSYS/lib
+#echo "Loading ROOT"
+#. /afs/cern.ch/sw/lcg/contrib/gcc/4.3/i686-slc5-gcc34-opt/setup.sh
+#cd /afs/cern.ch/sw/lcg/app/releases/ROOT/5.27.04/i686-slc5-gcc43-opt/root/
+#. bin/thisroot.sh
+#cd -
+#
+### Enable PyROOT
+#export PYTHON_LOC=/afs/cern.ch/sw/lcg/external/Python/2.5.4p2/i686-slc5-gcc43-opt/
+#export PATH=$PYTHON_LOC/bin/:$PATH
+#export LD_LIBRARY_PATH=$ROOTSYS/lib:$PYTHON_LOC/lib:$LD_LIBRARY_PATH
+#export PYTHONPATH=$PYTHONPATH:$ROOTSYS/lib
